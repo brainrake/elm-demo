@@ -1,7 +1,7 @@
 import Random exposing (Seed, initialSeed, step, int)
 import Time exposing (Time, now, every, second)
 import Task exposing (perform)
-import Html exposing (Html, div, text, em)
+import Html exposing (Html, div, text, b)
 
 type alias Model =
   { time : Time
@@ -30,10 +30,10 @@ view : Model -> Html Msg
 view model = div []
   [ div []
     [ text "The time is: "
-    , em [] [ text <| toString model.time ] ]
+    , b [] [ text <| toString model.time ] ]
   , div []
     [ text "Die roll: "
-    , em [] [ text <| toString model.rand ] ] ]
+    , b [] [ text <| toString model.rand ] ] ]
 
 main = Html.program
   { init = init
